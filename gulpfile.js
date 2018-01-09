@@ -4,11 +4,30 @@ var nodemon = require('gulp-nodemon');
 var notify = require('gulp-notify');
 var clean = require('gulp-clean');
 
+/*task for add css,views and img in the dist*/
+gulp.task('css', () => {
+    return gulp.src(["front/css/styles.css"])
+        .pipe(gulp.dest('dist/css'))
+});
+
+gulp.task('views', () => {
+    return gulp.src(["views/*.twig"])
+        .pipe(gulp.dest('dist/views'))
+});
+
+gulp.task('img', () => {
+    return gulp.src(["front/img/*.jpg"])
+        .pipe(gulp.dest('dist/img'))
+});
+/* */
 gulp.task('es6', () => {
     return gulp.src(["app.js", "routes/*", 'lib/*', 'middleware/*'], {base: "."})
         .pipe(babel({presets: ['es2015']}))
         .pipe(gulp.dest('dist'))
 });
+
+var notify = require('gulp-notify');
+var clean = require('gulp-clean');
 
 gulp.task('json', () => {
     return gulp.src(['config/*'], {base: "."})
@@ -32,6 +51,7 @@ gulp.task('server', function() {
     })
 });
 
-gulp.task('default', ['clean', 'build', 'server']);
+/*add css in default tasks */
+gulp.task('default', ['build', 'server','css','views','img']);
 gulp.task('build', ['es6', 'json']);
 gulp.task('heroku', ['clean', 'build']);
