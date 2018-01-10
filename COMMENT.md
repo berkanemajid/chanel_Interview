@@ -8,9 +8,9 @@
 - Le dossier view contient uniquement des fichiers de type twig
 - J'ai créé un dossier "Controllers"
 	- A l'intérieur de ce dossier, j'ai créé 1 nouveau fichier "product;.js"  qui contient les fonctions qui contrôlent les routes, que j'appelle depuis "routes/products.js"
-
-J'ai supprimé la fonction get.list... de app.js et je l'ai placée dans "routes/products.js"
-
+- J'ai supprimé la fonction get.list... de app.js et je l'ai placée dans "routes/products.js"
+- J'ai changé la route express statique, maintenant il pointe vers le dossier "dist".
+- J'ai ajouté un lien dans le template "view.twig", qui permet de revenir à la liste des produits du carito ou du détail d'un produit.
 
 2. Gulp:
 - Par le biais de gulp, j'ai créé des taches qui récupérent le contenu des fichiers "front" et "view" et le mettent dans "dist" (css, img et views)
