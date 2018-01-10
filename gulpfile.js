@@ -21,7 +21,7 @@ gulp.task('img', () => {
 });
 /* */
 gulp.task('es6', () => {
-    return gulp.src(["app.js", "routes/*", 'lib/*', 'middleware/*'], {base: "."})
+    return gulp.src(["app.js", "routes/*", 'lib/*', 'middleware/*', 'controllers/*'], {base: "."})
         .pipe(babel({presets: ['es2015']}))
         .pipe(gulp.dest('dist'))
 });

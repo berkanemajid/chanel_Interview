@@ -22,7 +22,7 @@ app.use(express.static('dist'));
 
 // app.get('/', routeIndex);
 app.use('/products', routeProducts);
-app.get('/products/list', function(req, res) {
+/*app.get('/products/list', function(req, res) {
     var sqlite3 = require('sqlite3').verbose();
     var db = new sqlite3.Database('database.sqlite');
 
@@ -32,7 +32,7 @@ app.get('/products/list', function(req, res) {
 
     db.close();
 })
-
+*/
 app.close = function() {
     server.close();
 }
